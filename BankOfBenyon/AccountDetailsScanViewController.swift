@@ -125,7 +125,9 @@ class AccountDetailsScanViewController: UIViewController, AVCaptureMetadataOutpu
 
                     let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
 
-                    let cancelAction = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+                    let cancelAction = UIAlertAction(title: "OK", style: .Cancel) { [weak self] action in
+                        self?.qrCodeFrameView.frame = CGRectZero
+                    }
                     alert.addAction(cancelAction)
 
                     self.presentViewController(alert, animated: true, completion: nil)
