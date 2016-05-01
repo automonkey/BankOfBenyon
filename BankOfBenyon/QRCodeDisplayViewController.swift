@@ -4,15 +4,29 @@ class QRCodeDisplayViewController: UIViewController {
 
     lazy var qrCodeImageView = UIImageView()
 
+    lazy var accountDetailsLabel:UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        return label
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.addSubview(qrCodeImageView)
+        view.addSubview(accountDetailsLabel)
 
         qrCodeImageView.snp_makeConstraints { make in
-            make.center.equalTo(view)
-            make.width.equalTo(300.0)
-            make.height.equalTo(300.0)
+            make.centerX.equalTo(view)
+            make.top.equalTo(view).offset(50.0)
+            make.width.equalTo(250.0)
+            make.height.equalTo(250.0)
+        }
+
+        accountDetailsLabel.snp_makeConstraints { make in
+            make.top.equalTo(qrCodeImageView.snp_bottom).offset(20.0)
+            make.left.equalTo(view).offset(20.0)
+            make.right.equalTo(view).offset(20.0)
         }
     }
 
@@ -20,6 +34,8 @@ class QRCodeDisplayViewController: UIViewController {
         let name = NSUserDefaults.standardUserDefaults().stringForKey("name")!
         let sortCode = NSUserDefaults.standardUserDefaults().stringForKey("sortCode")!
         let accountNumber = NSUserDefaults.standardUserDefaults().stringForKey("accountNumber")!
+
+        accountDetailsLabel.text = "Name: \(name)\nSort code: \(sortCode)\nAccount Number: \(accountNumber)"
 
         let userInfo = UserInfoDTO(name: name, accountData: UserInfoDTO.AccountData(sortCode: sortCode, accountNumber: accountNumber))
 
