@@ -51,8 +51,9 @@ class AccountDetailsScanViewController: UIViewController, AVCaptureMetadataOutpu
 
         scanButton.snp_makeConstraints { make in
             let margin = 20.0
+            let bottomMargin = 100.0
             make.top.equalTo(cameraView.snp_bottom).offset(margin)
-            make.bottom.equalTo(view).offset(-margin)
+            make.bottom.equalTo(view).offset(-bottomMargin)
             make.left.equalTo(view).offset(margin)
             make.right.equalTo(view).offset(-margin)
             make.height.equalTo(50.0)
@@ -120,7 +121,7 @@ class AccountDetailsScanViewController: UIViewController, AVCaptureMetadataOutpu
                     stopReading()
 
                     let title = "Account Details"
-                    let message = "Sort Code: \(accountDetails.sortCode)\nAccount Number: \(accountDetails.accountNumber)"
+                    let message = "Sort Code: \(accountDetails.accountData?.sortCode)\nAccount Number: \(accountDetails.accountData?.accountNumber)"
 
                     let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
 
@@ -135,12 +136,7 @@ class AccountDetailsScanViewController: UIViewController, AVCaptureMetadataOutpu
 
 }
 
-struct AccountDetails {
-    let sortCode:String
-    let accountNumber:String
-}
-
-func accountDetailsFromJson(jsonData:String) -> AccountDetails? {
+func accountDetailsFromJson(jsonData:String) -> UserInfoDTO? {
 
     guard let jsonData = jsonData.dataUsingEncoding(NSUTF8StringEncoding) else {
         return nil
@@ -151,15 +147,7 @@ func accountDetailsFromJson(jsonData:String) -> AccountDetails? {
             return nil
         }
 
-        guard let accountDetails = jsonObject["bankOfWillData"]?["accountData"] else {
-            return nil
-        }
-
-        guard let sortCode = accountDetails?["sortCode"] as? String, accountNumber = accountDetails?["accountNumber"] as? String else {
-            return nil
-        }
-
-        return AccountDetails(sortCode: sortCode, accountNumber: accountNumber)
+        return UserInfoDTO(fromDictionary: jsonObject)
     }
     catch let error as NSError {
         print("\(error.localizedDescription)")
