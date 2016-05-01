@@ -19,8 +19,8 @@ class QRCodeDisplayViewController: UIViewController {
         qrCodeImageView.snp_makeConstraints { make in
             make.centerX.equalTo(view)
             make.top.equalTo(view).offset(50.0)
-            make.width.equalTo(250.0)
-            make.height.equalTo(250.0)
+            make.width.equalTo(view).offset(-20.0)
+            make.height.equalTo(qrCodeImageView.snp_width)
         }
 
         accountDetailsLabel.snp_makeConstraints { make in
