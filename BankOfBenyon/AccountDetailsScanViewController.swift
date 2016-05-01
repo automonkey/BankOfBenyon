@@ -78,12 +78,6 @@ class AccountDetailsScanViewController: UIViewController, AVCaptureMetadataOutpu
         }
     }
 
-    override func viewDidAppear(animated: Bool) {
-        videoPreviewLayer?.frame = cameraView.layer.bounds
-        cameraView.layer.addSublayer(videoPreviewLayer!)
-        cameraView.bringSubviewToFront(qrCodeFrameView)
-    }
-
     func startStopReading() {
         if !isReading {
             startReading()
@@ -95,6 +89,9 @@ class AccountDetailsScanViewController: UIViewController, AVCaptureMetadataOutpu
     func startReading() {
         isReading = true
         captureSession?.startRunning()
+        videoPreviewLayer?.frame = cameraView.layer.bounds
+        cameraView.layer.addSublayer(videoPreviewLayer!)
+        cameraView.bringSubviewToFront(qrCodeFrameView)
     }
 
     func stopReading() {
