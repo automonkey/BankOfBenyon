@@ -7,8 +7,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
-        generateSortCodeAndAccNo()
-
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {
             window.backgroundColor = UIColor.whiteColor()
@@ -40,15 +38,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-}
-
-func generateSortCodeAndAccNo() {
-    if NSUserDefaults.standardUserDefaults().objectForKey("sortCode") == nil {
-
-        let sortCode = String(format: "%02d-%02d-%02d", arc4random_uniform(99), arc4random_uniform(99), arc4random_uniform(99))
-        let accountNumber = String(format: "%06d", arc4random_uniform(999999))
-
-        NSUserDefaults.standardUserDefaults().setObject("\(sortCode)", forKey: "sortCode")
-        NSUserDefaults.standardUserDefaults().setObject("\(accountNumber)", forKey: "accountNumber")
-    }
 }

@@ -10,6 +10,7 @@
 		7E512D801CD62AC900FBF444 /* QRCodeDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E512D7F1CD62AC900FBF444 /* QRCodeDisplayViewController.swift */; };
 		7E512D821CD62BA600FBF444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E512D811CD62BA600FBF444 /* ViewController.swift */; };
 		7E63BE621CD63B3D00608D5F /* UserInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E63BE611CD63B3D00608D5F /* UserInfoDTO.swift */; };
+		7E78B58F1CD6958D00E6E081 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E78B58E1CD6958D00E6E081 /* RegistrationViewController.swift */; };
 		7E908CC91CD5F40B00E36E5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E908CC81CD5F40B00E36E5E /* AppDelegate.swift */; };
 		7E908CCB1CD5F40B00E36E5E /* AccountDetailsScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E908CCA1CD5F40B00E36E5E /* AccountDetailsScanViewController.swift */; };
 		7E908CD01CD5F40B00E36E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E908CCF1CD5F40B00E36E5E /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		7E512D7F1CD62AC900FBF444 /* QRCodeDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeDisplayViewController.swift; sourceTree = "<group>"; };
 		7E512D811CD62BA600FBF444 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E63BE611CD63B3D00608D5F /* UserInfoDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoDTO.swift; sourceTree = "<group>"; };
+		7E78B58E1CD6958D00E6E081 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		7E908CC51CD5F40B00E36E5E /* BankOfBenyon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankOfBenyon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E908CC81CD5F40B00E36E5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E908CCA1CD5F40B00E36E5E /* AccountDetailsScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailsScanViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				7E908CC81CD5F40B00E36E5E /* AppDelegate.swift */,
 				7E908CCA1CD5F40B00E36E5E /* AccountDetailsScanViewController.swift */,
 				7E512D7F1CD62AC900FBF444 /* QRCodeDisplayViewController.swift */,
+				7E78B58E1CD6958D00E6E081 /* RegistrationViewController.swift */,
 				7E63BE611CD63B3D00608D5F /* UserInfoDTO.swift */,
 				7E512D811CD62BA600FBF444 /* ViewController.swift */,
 				7E908CCF1CD5F40B00E36E5E /* Assets.xcassets */,
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E78B58F1CD6958D00E6E081 /* RegistrationViewController.swift in Sources */,
 				7E908CCB1CD5F40B00E36E5E /* AccountDetailsScanViewController.swift in Sources */,
 				7E512D801CD62AC900FBF444 /* QRCodeDisplayViewController.swift in Sources */,
 				7E63BE621CD63B3D00608D5F /* UserInfoDTO.swift in Sources */,

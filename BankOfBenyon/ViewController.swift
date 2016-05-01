@@ -20,4 +20,15 @@ class ViewController: UITabBarController {
         setViewControllers([scanVc, qrVc], animated: false)
     }
 
+    override func viewDidAppear(animated: Bool) {
+        registerIfRequired()
+    }
+
+    func registerIfRequired() {
+        if NSUserDefaults.standardUserDefaults().objectForKey("sortCode") == nil {
+
+            presentViewController(RegistrationViewController(), animated: true, completion: nil)
+        }
+    }
+
 }

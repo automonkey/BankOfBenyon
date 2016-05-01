@@ -117,11 +117,14 @@ class AccountDetailsScanViewController: UIViewController, AVCaptureMetadataOutpu
 
             if let stringData = metadataObj.stringValue {
 
-                if let accountDetails = accountDetailsFromJson(stringData) {
+                if let accountDetails = accountDetailsFromJson(stringData),
+                    sortCode = accountDetails.accountData?.sortCode,
+                    accNo = accountDetails.accountData?.accountNumber {
+
                     stopReading()
 
                     let title = "Account Details"
-                    let message = "Sort Code: \(accountDetails.accountData?.sortCode)\nAccount Number: \(accountDetails.accountData?.accountNumber)"
+                    let message = "Name: \(accountDetails.name)\nSort Code: \(sortCode)\nAccount Number: \(accNo)"
 
                     let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
 
