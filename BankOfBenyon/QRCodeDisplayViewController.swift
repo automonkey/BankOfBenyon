@@ -17,7 +17,10 @@ class QRCodeDisplayViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        let userInfo = UserInfoDTO(accountData: UserInfoDTO.AccountData(sortCode: "52-17-23", accountNumber: "123456"))
+        let sortCode = NSUserDefaults.standardUserDefaults().stringForKey("sortCode")!
+        let accountNumber = NSUserDefaults.standardUserDefaults().stringForKey("accountNumber")!
+
+        let userInfo = UserInfoDTO(accountData: UserInfoDTO.AccountData(sortCode: sortCode, accountNumber: accountNumber))
 
         let data = try! NSJSONSerialization.dataWithJSONObject(userInfo.toDictionary()!, options: NSJSONWritingOptions())
 

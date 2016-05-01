@@ -82,10 +82,10 @@
 		7E908CC71CD5F40B00E36E5E /* BankOfBenyon */ = {
 			isa = PBXGroup;
 			children = (
-				7E63BE611CD63B3D00608D5F /* UserInfoDTO.swift */,
 				7E908CC81CD5F40B00E36E5E /* AppDelegate.swift */,
 				7E908CCA1CD5F40B00E36E5E /* AccountDetailsScanViewController.swift */,
 				7E512D7F1CD62AC900FBF444 /* QRCodeDisplayViewController.swift */,
+				7E63BE611CD63B3D00608D5F /* UserInfoDTO.swift */,
 				7E512D811CD62BA600FBF444 /* ViewController.swift */,
 				7E908CCF1CD5F40B00E36E5E /* Assets.xcassets */,
 				7E908CD11CD5F40B00E36E5E /* LaunchScreen.storyboard */,
