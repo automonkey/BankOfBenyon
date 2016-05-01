@@ -1,0 +1,6 @@
+framework module Pods_BankOfBenyon {
+  umbrella header "Pods-BankOfBenyon-umbrella.h"
+
+  export *
+  module * { export * }
+}
